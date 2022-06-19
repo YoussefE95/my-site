@@ -1,0 +1,8 @@
+api/lotr/node_modules
+api/lotr/package-lock.json
+api/lotr/config.json
+client/package-lock.json
+client/.vscode
+server/node_modules
+server/package-lock.json
+server/config.json
