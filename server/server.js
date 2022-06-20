@@ -11,8 +11,8 @@ app.use(cors({
     origin: 'http://localhost:3000'
 }));
 
-app.use('/lotr/search', require('./endpoints/lotr/search'));
-app.use('/lotr/history', require('./endpoints/lotr/history'));
+app.use('/api/lotr/search', require('./endpoints/lotr/search'));
+app.use('/api/lotr/history', require('./endpoints/lotr/history'));
 
 const url = `mongodb+srv://${config.username}:${config.password}@${config.cluster}/${config.database}?retryWrites=true&w=majority`;
 const client = new MongoClient(url);
