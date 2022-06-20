@@ -13,7 +13,7 @@ export default {
             try {
                 event.preventDefault();
                 this.clearPreviousSearch();
-                const searchResults = await fetch(`http://localhost:8888/api/lotr/search/${this.type}?phrase=${this.phrase}`);
+                const searchResults = await fetch(`http://youssefelzein.com/api/lotr/search/${this.type}?phrase=${this.phrase}`);
                 this.results = (await searchResults.json()).results;
             }
             catch (err) {
@@ -22,7 +22,7 @@ export default {
         },
         async getDetails(id) {
             try {
-                const searchDetails = await fetch(`http://localhost:8888/api/lotr/search/${this.type}/details`, {
+                const searchDetails = await fetch(`http://youssefelzein.com/api/lotr/search/${this.type}/details`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
