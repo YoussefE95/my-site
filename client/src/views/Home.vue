@@ -1,61 +1,21 @@
 <script>
+    import HomeNav from '@/components/HomeNav.vue';
+
     export default {
-        data() {
-            return {
-                isActive: false
-            }
-        },
-        methods: {
-            toggleMenu() {
-                this.isActive = !this.isActive;
-            }
-        },
         mounted() {
             const section = this.$router.currentRoute.value.hash.replace("#", "");
             if (section)
                 this.$nextTick(() => window.document.getElementById(section).scrollIntoView());
+        },
+        components: {
+            HomeNav
         }
     }
 </script>
 
 <template>
     <main>
-        <div>
-            <div class="hamburger hamburger--vortex " :class="{ 'is-active': isActive }" v-on:click="toggleMenu">
-                <div class="hamburger-box">
-                    <div class="hamburger-inner"></div>
-                </div>
-            </div>
-            <div v-if="isActive" v-on:click="toggleMenu">
-                <nav class="navbar is-overlay">
-                    <div class="navbar-item">
-                        <a class="navbar-item" href="#home">
-                            Home
-                        </a>
-                    </div>
-                    <div class="navbar-item">
-                        <a class="navbar-item" href="#about-me">
-                            About Me
-                        </a>
-                    </div>
-                    <div class="navbar-item">
-                        <a class="navbar-item" href="#my-links">
-                            Links
-                        </a>
-                    </div>
-                    <div class="navbar-item">
-                        <a class="navbar-item" href="#my-work">
-                            My Work
-                        </a>
-                    </div>
-                    <div class="navbar-item">
-                        <a class="navbar-item" href="#site-specs">
-                            Site Specs
-                        </a>
-                    </div>
-                </nav>
-            </div>
-        </div>
+        <HomeNav />
 
         <section class="hero is-large hero-home" id="home">
             <div class="hero-body">
@@ -66,7 +26,7 @@
             </div>
         </section>
 
-        <section class="about-me" id="about-me">
+        <section class="about-me uncolored-section" id="about-me">
             <div class="container">
                 <div class="column" data-aos="fade-in" data-aos-duration="1300">
                     <h1 class="title has-text-centered">About Me</h1>
@@ -87,7 +47,7 @@
             </div>
         </section>
 
-        <section class="my-links" id="my-links" data-aos="fade-in" data-aos-duration="1300">
+        <section class="my-links colored-section" id="my-links" data-aos="fade-in" data-aos-duration="1300">
             <div class="container">
                 <div class="column" data-aos="fade-in" data-aos-duration="1300">
                     <h1 class="title has-text-centered">Links</h1>
@@ -106,7 +66,7 @@
             </div>
         </section>
 
-        <section class="my-work" id="my-work">
+        <section class="my-work uncolored-section" id="my-work">
             <div class="container">
                 <div class="column" data-aos="fade-in" data-aos-duration="1300">
                     <h1 class="title has-text-centered">My Work</h1>
@@ -124,7 +84,7 @@
                             </p>
                         </div>
                         <footer class="card-footer">
-                            <RouterLink class="card-footer-item" to="/lotr">Preview</RouterLink>                               
+                            <RouterLink class="card-footer-item preview-button" to="/lotr">Preview</RouterLink>                               
                             <a class="card-footer-item" href="https://github.com/YoussefE95/middle-earth-info" target="_blank">
                                 Source Code
                             </a>
@@ -134,7 +94,7 @@
             </div>
         </section>
 
-        <section class="site-specs" id="site-specs" data-aos="fade-in" data-aos-duration="1300">
+        <section class="site-specs colored-section" id="site-specs" data-aos="fade-in" data-aos-duration="1300">
             <div class="container">
                 <div class="column" data-aos="fade-in" data-aos-duration="1300">
                     <h1 class="title has-text-centered">Site Specs</h1>
@@ -161,49 +121,6 @@
 </template>
 
 <style>
-.hamburger {
-    background: whitesmoke;
-    position: fixed;
-    z-index: 7;
-}
-
-.hamburger-inner,
-.hamburger-inner::before,
-.hamburger-inner::after {
-    background-color: black;
-}
-
-.hamburger.is-active .hamburger-inner,
-.hamburger.is-active .hamburger-inner::before,
-.hamburger.is-active .hamburger-inner::after {
-    background-color: #60a3bf;
-}
-
-
-.navbar {
-    background: whitesmoke;
-    position: fixed;
-    height: 50px;
-    max-width: 530px;
-    margin-left: 55px;
-    font-size: 18px;
-    z-index: 7;
-}
-
-.navbar a:hover {
-    color: whitesmoke;
-    background: #60a3bf;
-}
-
-@media (max-width: 1020px) {
-    .navbar {
-        height: 295px;
-        margin-left: 0px;
-        margin-top: 53px;
-        max-width: 127px;
-    }
-}
-
 @media (max-width: 776px) {
     img {
         max-width: 80%;
@@ -234,9 +151,25 @@
     }
 }
 
+.uncolored-section,
+.uncolored-section .title,
+.uncolored-section .subtitle,
+.uncolored-section .icon {
+    color: var(--text-primary-color);
+}
+
+
+.colored-section,
+.colored-section .title,
+.colored-section .subtitle,
+.colored-section .icon {
+    background: var(--background-color-alt);
+    color: var(--text-primary-color);
+}
+
 .hero-home {
-    background-image: url('src/assets/leaves.jpg');
-    background: linear-gradient(rgba(75, 92, 62, 0.65), rgba(75, 92, 62, 0.65)), rgba(0, 0, 0, 0.55) url("src/assets/leaves.jpg") no-repeat;
+    background-image: url('https://raw.githubusercontent.com/catppuccin/wallpapers/main/waves/wavy_lines_v03_5120x2880.png');
+    background: linear-gradient(var(--hero-gradient), var(--hero-gradient)), rgba(0, 0, 0, 0.55) url("https://raw.githubusercontent.com/catppuccin/wallpapers/main/landscapes/evening-sky.png") no-repeat;
     background-attachment: fixed;
     background-size: cover;
     box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
@@ -246,13 +179,13 @@
     font-family: 'Caveat', sans-serif;
     transform: rotate(-4deg);
     font-size: 80px;
-    color: whitesmoke;
+    color: var(--background-color-secondary);
 }
 
 .hero-home .subtitle {
     padding: 8px;
     font-size: 30px;
-    color: whitesmoke;
+    color: var(--background-color-secondary);
 }
 
 .about-me,
@@ -283,12 +216,7 @@
     box-shadow: 0 5px 20px rgba(14, 25, 80, 0.3);
 }
 
-.my-links {
-    background: #4b5c3e;
-}
-
 .my-links .title {
-    color: whitesmoke;
     padding-bottom: 55px;
 }
 
@@ -296,49 +224,44 @@
     font-size: 18px;
     padding-left: 45px;
     padding-right: 45px;
-    color: whitesmoke;
+    color: var(--link-primary-color);
 }
 
 .my-links .icon:hover {
-    color: #7dd5fa;
+    color: var(--link-secondary-color);
 }
 
 .my-work .card {
     margin: 20px;
     max-width: 324px;
+    background: var(--background-color-secondary);
+    color: var(--text-primary-color);
 }
 
-.my-work .card-header {
-    background: #f7f5f5;
-    border-bottom: 1px solid #e6e6e6;
-    font-size: 20px;
+.my-work .card-header-title {
+    color: var(--text-primary-color);
     font-weight: bold;
 }
 
+.my-work .card-header-title,
 .my-work .card-content {
-    padding: 35px;
-    background: #fafafa;
+    border-bottom: 1px solid var(--accent-color);
     font-size: 20px;
 }
 
+.my-work .preview-button {
+    border-right: 1px solid var(--accent-color);
+}
+
 .my-work .card-footer-item {
+    color: var(--link-primary-color);
     min-width: 162px;
-    color: black;
-    background: #f7f5f5;
-    border-color: #e6e6e6;
     font-size: 18px;
 }
 
 .my-work .card-footer-item:hover {
-    background: #60a3bf;
-    color: whitesmoke;
-}
-
-.site-specs,
-.site-specs .title,
-.site-specs .subtitle {
-    background: #4b5c3e;
-    color: whitesmoke;
+    background: var(--link-secondary-color);
+    color: var(--background-color-alt);
 }
 
 .site-specs .subtitle {
@@ -351,10 +274,10 @@
 }
 
 .site-specs a {
-    color: #60a3bf;
+    color: var(--link-primary-color);
 }
 
 .site-specs a:hover {
-    color: #7dd5fa;
+    color: var(--link-secondary-color);
 }
 </style>
