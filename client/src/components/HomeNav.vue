@@ -82,6 +82,10 @@
     z-index: 7;
 }
 
+.navbar a {
+    color: var(--text-primary-color);
+}
+
 .navbar a:hover {
     background: var(--link-secondary-color);
     color: var(--background-color-alt);

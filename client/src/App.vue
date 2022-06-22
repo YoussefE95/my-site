@@ -24,6 +24,7 @@ body {
   --link-primary-color: #1e66f5;
   --link-secondary-color: #7287fd;
   --hero-gradient: rgba(137, 180, 250, 0.65);
+  --hero-text: #cdd6f4;
 }
 
 /* Define styles for the root window with dark - mode preference */
@@ -38,6 +39,7 @@ body {
   --link-primary-color: #89b4fa;
   --link-secondary-color: #b4befe;
   --hero-gradient: rgba(110, 115, 141, 0.65);
+  --hero-text: #cdd6f4;
 }
 
 body {

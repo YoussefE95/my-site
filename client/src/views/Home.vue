@@ -84,7 +84,7 @@
                             </p>
                         </div>
                         <footer class="card-footer">
-                            <RouterLink class="card-footer-item preview-button" to="/lotr">Preview</RouterLink>                               
+                            <RouterLink class="card-footer-item" to="/lotr">Preview</RouterLink>                               
                             <a class="card-footer-item" href="https://github.com/YoussefE95/middle-earth-info" target="_blank">
                                 Source Code
                             </a>
@@ -179,13 +179,13 @@
     font-family: 'Caveat', sans-serif;
     transform: rotate(-4deg);
     font-size: 80px;
-    color: var(--background-color-secondary);
+    color: var(--hero-text);
 }
 
 .hero-home .subtitle {
     padding: 8px;
     font-size: 30px;
-    color: var(--background-color-secondary);
+    color: var(--hero-text);
 }
 
 .about-me,
@@ -236,24 +236,21 @@
     max-width: 324px;
     background: var(--background-color-secondary);
     color: var(--text-primary-color);
+    font-size: 20px;
 }
 
 .my-work .card-header-title {
     color: var(--text-primary-color);
     font-weight: bold;
-}
-
-.my-work .card-header-title,
-.my-work .card-content {
     border-bottom: 1px solid var(--accent-color);
-    font-size: 20px;
 }
 
-.my-work .preview-button {
-    border-right: 1px solid var(--accent-color);
+.my-work footer {
+    border-color: var(--accent-color);
 }
 
 .my-work .card-footer-item {
+    border-color: var(--accent-color);
     color: var(--link-primary-color);
     min-width: 162px;
     font-size: 18px;
