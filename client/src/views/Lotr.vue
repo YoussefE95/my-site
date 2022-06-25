@@ -178,8 +178,12 @@ export default {
     width: 50px;
     height: 50px;
     padding-left: 7px;
-    background: var(--background-color-secondary);
-    color: var(--text-primary-color);
+    background: transparent;
+    color: var(--link-primary-color);
+}
+
+.home-icon:hover {
+    color: var(--link-secondary-color);
 }
 
 .hero-lotr {

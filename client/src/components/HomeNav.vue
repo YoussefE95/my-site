@@ -54,7 +54,7 @@
 
 <style>
 .hamburger {
-    background: var(--background-color-secondary);
+    background: transparent;
     position: fixed;
     z-index: 7;
 }
@@ -68,7 +68,7 @@
 .hamburger.is-active .hamburger-inner,
 .hamburger.is-active .hamburger-inner::before,
 .hamburger.is-active .hamburger-inner::after {
-    background-color: var(--link-secondary-color);
+    background-color: var(--text-primary-color);
 }
 
 .navbar {

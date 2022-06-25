@@ -104,7 +104,7 @@
                         <p class="subtitle has-text-centered">Development</p>
                         <p class="content">
                             Designed using MEVN (<a href="https://www.mongodb.com/" target="_blank">MongoDB</a>, <a href="https://expressjs.com/" target="_blank">ExpressJs</a>, <a href="https://vuejs.org/" target="_blank">VueJs</a>, <a href="https://nodejs.org/en/" target="_blank">NodeJs</a>) stack and REST architecture.
-                            Styling is done using <a href="https://bulma.io/" target="_blank">Bulma</a>. Scrolling animations are done using <a href="https://michalsnik.github.io/aos/" target="_blank">AOS (Animate On Scroll)</a>. I used <a href="https://jonsuh.com/hamburgers/" target="_blank">Jonsuh's Burgers</a>
+                            Styling is done using <a href="https://bulma.io/" target="_blank">Bulma</a> and <a href="https://github.com/Wikiki/bulma-switch" target="_blank">Bulma Switch</a>. Scrolling animations are done using <a href="https://michalsnik.github.io/aos/" target="_blank">AOS (Animate On Scroll)</a>. I used <a href="https://jonsuh.com/hamburgers/" target="_blank">Jonsuh's Burgers</a>
                             for the burger animation. The font is <a href="https://fonts.google.com/specimen/Anek+Malayalam" target="_blank">Anek Malayalam</a> and the icons are <a href="https://fontawesome.com/" target="_blank">Font Awesome</a>
                         </p>
                     </div>
